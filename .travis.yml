@@ -1,0 +1,19 @@
+sudo: true
+language: python
+python: 3.7
+
+cache: npm
+cache: pip
+
+install:
+  - pip install spotdl
+  - npm install --global surge
+  - sudo apt-get install ffmpeg
+
+
+script:
+  - spotdl --playlist https://open.spotify.com/playlist/37i9dQZEVXbMDoHDwVN2tF
+  - spotdl --list global-top-50.txt -f "./" 
+
+after_success:
+  - ls
