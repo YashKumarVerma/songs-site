@@ -7,14 +7,14 @@ cache: npm
 cache: pip
 
 install:
-  # - pip install spotdl
+  - pip install spotdl
   - npm install --global surge
   # - sudo apt-get install ffmpeg
 
 script:
-  # - spotdl --playlist https://open.spotify.com/playlist/37i9dQZEVXbMDoHDwVN2tF
-  # - spotdl --list global-top-50.txt -c "config.yml"
-  # - php generateJSON.php > downloads/songs.json
+  - spotdl --playlist https://open.spotify.com/playlist/37i9dQZEVXbMDoHDwVN2tF
+  - spotdl --list global-top-50.txt -c "config.yml"
+  - php generateJSON.php > downloads/songs.json
   - export SURGE_LOGIN=${surge_email}
   - export SURGE_TOKEN=${surge_token}
   - surge --project ./downloads --domain "global-top-50.surge.sh"
