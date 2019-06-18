@@ -10,11 +10,11 @@ install:
   - pip install spotdl
   - npm install --global surge
   - sudo apt-get install ffmpeg
-
+  - mkdir downloads
 
 script:
-  - spotdl --playlist https://open.spotify.com/playlist/37i9dQZEVXbMDoHDwVN2tF
-  - spotdl --list global-top-50.txt -f "./" 
+  # - spotdl --playlist https://open.spotify.com/playlist/37i9dQZEVXbMDoHDwVN2tF
+  - spotdl --list global-top-50.txt -f "./" -c "config.yml"
 
 after_success:
   - ls
