@@ -3,7 +3,7 @@ spotify-downloader:
   download-only-metadata: false
   dry-run: false
   file-format: '{artist} - {track_name}'
-  folder: ./downloads
+  folder: downloads/
   input-ext: .m4a
   log-level: INFO
   manual: false
